@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Tìm Kiếm thông tin khách hàng</title>
     <style>
 table, th, td {
   border: 1px solid white;
@@ -19,7 +19,7 @@ th, td {
     <br><br>
     <div>
             <?php
-                $conn = mysqli_connect('db', 'root', 'example', 'manage_customer');
+                $conn = mysqli_connect('db', 'root', 'mypassword', 'manage_customer');
                 if(isset($_POST['search'])){
                     $searchkey=$_POST['search'];
                      $sql = "SELECT * FROM customer WHERE email LIKE '%$searchkey%' or  numberphone LIKE '%$searchkey%' ";
@@ -34,6 +34,7 @@ th, td {
 
             ?>
             <form action="" method ="post">
+                <h3>Nhập email và số điện thoại của khách hàng bạn muốn tìm kiếm</h3>
                 <div>
                     <input type="text" name="search" placeholder="Nhập từ khóa cần tìm kiếm" value="<?php echo $searchkey; ?> ">
                 </div>  

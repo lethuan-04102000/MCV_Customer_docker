@@ -12,7 +12,7 @@ class UserController
 
   public function __construct()
   {
-      $connection = new DBConnection("mysql:host=db;dbname=manage_customer", "root", "");
+      $connection = new DBConnection("mysql:host=db;dbname=manage_customer", "root", "mypassword");
       $this->UserDB = new UserDB($connection->connect());
   }
   public function adduser()
